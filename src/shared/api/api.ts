@@ -1,5 +1,6 @@
 import axios from 'axios';
 import type { Term } from "@/shared/model/term";
+import type {Relation} from "@/shared/model/relation";
 
 const axiosInstance = axios.create({
     baseURL: 'http://localhost:8000',
@@ -13,4 +14,5 @@ const axiosInstance = axios.create({
 
 export const getApi = {
     getTerms: async () => axiosInstance.get<Term[]>('/terms'),
+    getRelations: async () => axiosInstance.get<Relation[]>('/relations'),
 }
