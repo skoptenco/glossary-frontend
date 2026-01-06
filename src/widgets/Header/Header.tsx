@@ -23,6 +23,7 @@ const Header = () => {
                     Семантический граф
                 </ActiveButton>
             </S.HeaderTabs>
+            <S.HeaderAvatarLink to="https://vk.com/sneckcid">Bochkov Ruslan</S.HeaderAvatarLink>
         </S.HeaderWrapper>
     );
 }

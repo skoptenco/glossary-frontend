@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link} from "react-router-dom";
 
 const HeaderWrapper = styled.div`
     width: 100%;
@@ -17,7 +18,12 @@ const HeaderTabs = styled.div`
     gap: 8px;
 `;
 
+const HeaderAvatarLink = styled(Link)`
+    
+`;
+
 export default {
     HeaderTabs,
-    HeaderWrapper
+    HeaderWrapper,
+    HeaderAvatarLink
 };
