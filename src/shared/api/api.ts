@@ -3,7 +3,7 @@ import type { Term } from "@/shared/model/term";
 import type {Relation} from "@/shared/model/relation";
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: import.meta.env.VITE_HOST,
     headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
