@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {BrowserRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import {BaseLayout} from "./layouts/BaseLayout";
 import { TermsPage } from "@/pages/Terms";
 import { GraphPage } from "@/pages/Graph";
@@ -26,6 +26,7 @@ function App() {
                 <Route path="/" element={<BaseLayout/>}>
                     <Route path="terms" element={<TermsPage/>} />
                     <Route path="graph" element={<GraphPage/>} />
+                    <Route index element={<Navigate to="terms"/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
