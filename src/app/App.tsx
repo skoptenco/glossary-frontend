@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import {BaseLayout} from "./layouts/BaseLayout";
 import { TermsPage } from "@/pages/Terms";
 import { GraphPage } from "@/pages/Graph";
+import {Helmet} from "react-helmet";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -20,6 +21,11 @@ function App() {
 
   return (
     <>
+        <Helmet>
+            <title>Глоссарий терминов ВКР</title>
+            <meta charSet="utf-8" />
+
+        </Helmet>
         <GlobalStyles />
         <BrowserRouter>
             <Routes>
