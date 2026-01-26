@@ -6,6 +6,7 @@ const LayoutWrapper = styled.div`
 `;
 
 const PageWrapper = styled.div`
+    height: calc(100% - 55px);
     padding: 20px;
 `
 

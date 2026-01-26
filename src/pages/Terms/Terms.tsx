@@ -3,6 +3,7 @@ import type {Term} from "@/shared/model/term";
 import {TermCard} from "@/entities/term/ui/TermCard";
 import {getApi} from "@/shared/api";
 import S from "./Terms.styles";
+import {Helmet} from "react-helmet";
 
 const TermsPage = () => {
 
@@ -15,10 +16,16 @@ const TermsPage = () => {
     }, []);
 
     return (
-        <S.TermsWrapper>
-            {terms.map(term => (
-                <TermCard term={term} key={term.keyword}/>))}
-        </S.TermsWrapper>
+        <>
+            <Helmet>
+                <title>Список терминов</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Helmet>
+            <S.TermsWrapper>
+                {terms.map(term => (
+                    <TermCard term={term} key={term.keyword}/>))}
+            </S.TermsWrapper>
+        </>
     )
 };
 

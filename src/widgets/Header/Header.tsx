@@ -11,6 +11,12 @@ const Header = () => {
         <S.HeaderWrapper>
             <S.HeaderTabs>
                 <ActiveButton
+                    onClick={() => navigate("/")}
+                    active={pathname === "/"}
+                >
+                    Главная
+                </ActiveButton>
+                <ActiveButton
                     onClick={() => navigate("/terms")}
                     active={pathname === "/terms"}
                 >

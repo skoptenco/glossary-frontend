@@ -16,6 +16,7 @@ import type { ElkExtendedEdge, ElkNode, LayoutOptions} from 'elkjs';
 import '@xyflow/react/dist/style.css'
 import type {Term} from "@/shared/model/term";
 import type {Relation} from "@/shared/model/relation";
+import {Helmet} from "react-helmet";
 
 const transformTermToNode = (term: Term): Node => {
     return {
@@ -144,11 +145,17 @@ const Graph = () => {
 
 
     return (
-        <S.GraphWrapper style={{width: '100vw', height: '100vh'}}>
-            <ReactFlowProvider>
-                <LayoutFlow/>
-            </ReactFlowProvider>
-        </S.GraphWrapper>
+        <>
+            <Helmet>
+                <title>Семантический граф</title>
+                <meta name="robots" content="noindex, nofollow" />
+            </Helmet>
+            <S.GraphWrapper style={{width: '100vw', height: '100vh'}}>
+                <ReactFlowProvider>
+                    <LayoutFlow/>
+                </ReactFlowProvider>
+            </S.GraphWrapper>
+        </>
     );
 };
 

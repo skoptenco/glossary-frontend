@@ -1,9 +1,9 @@
 import {createGlobalStyle} from "styled-components";
-import {BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+import {BrowserRouter, Route, Routes } from "react-router-dom";
 import {BaseLayout} from "./layouts/BaseLayout";
 import { TermsPage } from "@/pages/Terms";
 import { GraphPage } from "@/pages/Graph";
-import {Helmet} from "react-helmet";
+import {MainPage} from "@/pages/Main";
 
 const GlobalStyles = createGlobalStyle`
     * {
@@ -21,18 +21,13 @@ function App() {
 
   return (
     <>
-        <Helmet>
-            <title>Глоссарий терминов ВКР</title>
-            <meta charSet="utf-8" />
-
-        </Helmet>
         <GlobalStyles />
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<BaseLayout/>}>
+                    <Route index element={<MainPage/>} />
                     <Route path="terms" element={<TermsPage/>} />
                     <Route path="graph" element={<GraphPage/>} />
-                    <Route index element={<Navigate to="terms"/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
